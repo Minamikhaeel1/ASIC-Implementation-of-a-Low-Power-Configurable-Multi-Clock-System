@@ -76,7 +76,7 @@ This project was taken through a complete ASIC physical design flow to ensure ma
 The repository is organized to reflect the different stages of the digital design and ASIC implementation flow:
 
 
-**`RTL/`**: Contains the Verilog source codes for the individual system blocks (ALU, Register File, Synchronizers, Clock Dividers, etc.).
+* **`RTL/`**: Contains the Verilog source codes for the individual system blocks (ALU, Register File, Synchronizers, Clock Dividers, etc.).
 * **`Final_System_RTL/`**: Contains the top-level module integrating the entire system across the multi-clock domains, along with the main testbench.
 * **`Synthesis/`**: Contains the TCL scripts, Synopsys Design Constraints (SDC), and the generated gate-level netlist and reports for the Logic Synthesis phase.
 * **`Post-Syn Formality/`**: Contains the setup and scripts for Logic Equivalence Checking (LEC) between the original RTL and the synthesized netlist using Synopsys Formality.
