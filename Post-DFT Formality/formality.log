@@ -1,0 +1,53 @@
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/remainder[7] is undriven.
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/remainder[6] is undriven.
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/remainder[5] is undriven.
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/remainder[4] is undriven.
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/remainder[3] is undriven.
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/remainder[2] is undriven.
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/remainder[1] is undriven.
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/remainder[0] is undriven.
+Info:  Net Imp:/WORK/alu_DW_div_uns_0/divide_by_0 is undriven.
+Info:  Net Imp:/WORK/alu_DW01_sub_0/CO is undriven.
+Info:  Net Imp:/WORK/alu_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/alu_DW01_add_1/CO is undriven.
+Info:  guide_instance_map 2 (Line: 50)  Cannot find instance reference 'uart_clk_mux'.
+Info:  SVF Operation 2 (Line: 50) - instance_map.  Status: rejected
+
+Info:  guide_uniquify 69 (Line: 386)  Cannot find object "rst_muxx" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 69 (Line: 386)  Cannot find object "rst_muxx_sync1" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 69 (Line: 386)  Cannot find object "rst_muxx_sync2" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 69 (Line: 386)  Cannot find object "uart_clk_mux" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 69 (Line: 386)  Cannot find object "uart_clk_mux_tx" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 69 (Line: 386)  Cannot find object "uart_clk_mux_rx" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 69 (Line: 386)  Cannot find object "ref_clk_mux" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "ref_clk_mux" in design 'SYS_TOP_dft'.
+Info:  SVF Operation 102 (Line: 756) - uniquify.  Status: rejected
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "uart_clk_mux_rx" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "uart_clk_mux_tx" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "rst_muxx_sync2" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "rst_muxx_sync1" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "div_RX/U9" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "div_tx/U9" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "ref_clk_mux/U1" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "uart_clk_mux_rx/U1" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "uart_clk_mux_tx/U1" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 102 (Line: 756)  Cannot find object "uart_clk_mux/U1" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 110 (Line: 805)  Cannot find object "alu_inst/dp_cluster_0/mult_42" in design 'SYS_TOP_dft'.
+Info:  Pre-verification of Ref:/WORK/alu/div_48 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/alu/mult_42 SUCCEEDED.
+Info:  guide_scan_input 138 (Line: 919)  synopsys_auto_setup is false, ignoring Scan Input guidance.
+Info:  SVF Operation 138 (Line: 919) - scan_input.  Status: rejected
+
+Info:  guide_scan_input 139 (Line: 924)  synopsys_auto_setup is false, ignoring Scan Input guidance.
+Info:  SVF Operation 139 (Line: 924) - scan_input.  Status: rejected
+
+Info:  guide_ununiquify 140 (Line: 929)  Cannot find object "rst_muxx_sync1" in design 'SYS_TOP_dft'.
+Info:  guide_ununiquify 140 (Line: 929)  Cannot find object "rst_muxx" in design 'SYS_TOP_dft'.
+Info:  guide_ununiquify 140 (Line: 929)  Cannot find object "uart_clk_mux_tx" in design 'SYS_TOP_dft'.
+Info:  guide_ununiquify 140 (Line: 929)  Cannot find object "uart_clk_mux" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 141 (Line: 937)  Cannot find object "uart_clk_mux_rx" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 141 (Line: 937)  Cannot find object "uart_clk_mux_tx" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 141 (Line: 937)  Cannot find object "uart_clk_mux" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 141 (Line: 937)  Cannot find object "rst_muxx_sync2" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 141 (Line: 937)  Cannot find object "rst_muxx_sync1" in design 'SYS_TOP_dft'.
+Info:  guide_uniquify 141 (Line: 937)  Cannot find object "rst_muxx" in design 'SYS_TOP_dft'.

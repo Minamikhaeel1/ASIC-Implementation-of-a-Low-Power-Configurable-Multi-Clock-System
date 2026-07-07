@@ -1,0 +1,116 @@
+
+###################################################################
+########################### Variables #############################
+###################################################################
+
+set SSLIB "/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+set TTLIB "/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+set FFLIB "/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db"
+
+###################################################################
+############################ Guidance #############################
+###################################################################
+
+# Synopsys setup variable
+
+set synopses_auto_setup true
+
+# Formality Setup File
+
+set_svf "/home/IC/Projects/system/dft/SYS_TOP_dft.svf"
+
+###################################################################
+###################### Reference Container ########################
+###################################################################
+
+# Read Reference Design Verilog Files
+
+read_verilog -container Ref "/home/IC/Projects/system/rtl/alu.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/clkdiv.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/CLKDIV_MUX.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/CLK_GATE.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/data_samp.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/data_sync.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/deser.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/edge_cnt.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fifo_memory.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fifo_r.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fifo_top.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fifo_w.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fsm.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fsmr.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/mux.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/par_check.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/parity.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/pulse_gen.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/reg_file.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/rst_sync.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/ser.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/stop_chack.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/strt_check.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/sync_r2w.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/sync_w2r.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/sys_crl.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/top.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/uart_rx_top.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/uart_top.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/mux2X1.v"
+read_verilog -container Ref "/home/IC/Projects/system/rtl/SYS_TOP_dft.v"
+# Read Reference technology libraries
+
+read_db -container Ref [list $SSLIB $TTLIB $FFLIB]
+
+# set the top Reference Design 
+
+set_reference_design SYS_TOP_dft
+set_top SYS_TOP_dft
+
+###################################################################
+#################### Implementation Container #####################
+###################################################################
+
+# Read Implementation Design Files
+
+read_verilog -netlist -container Imp "/home/IC/Projects/system/dft/netlists/SYS_TOP_dft.v"
+
+# Read Implementation technology libraries
+
+read_db -container Imp [list $SSLIB $TTLIB $FFLIB]
+
+# set the top Implementation Design
+
+set_implementation_design SYS_TOP_dft
+set_top SYS_TOP_dft
+
+
+set_dont_verify_points -type port Ref:/WORK/*/*SO*
+set_dont_verify_points -type port Imp:/WORK/*/*SO*
+
+
+set_constant Ref:/WORK/*/*test_mode* 0
+set_constant Imp:/WORK/*/*test_mode* 0
+
+set_constant Ref:/WORK/*/*SE* 0
+set_constant Imp:/WORK/*/*SE* 0
+
+###################### Matching Compare points ####################
+
+match
+
+######################### Run Verification ########################
+
+set successful [verify]
+if {!$successful} {
+diagnose
+analyze_points -failing
+}
+
+########################### Reporting ############################# 
+report_passing_points > "reports/passing_points.rpt"
+report_failing_points > "reports/failing_points.rpt"
+report_aborted_points > "reports/aborted_points.rpt"
+report_unverified_points > "reports/unverified_points.rpt"
+
+
+start_gui
+
