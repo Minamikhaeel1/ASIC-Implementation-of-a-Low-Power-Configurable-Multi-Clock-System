@@ -72,13 +72,11 @@ This project was taken through a complete ASIC physical design flow to ensure ma
     *   Performed Static Timing Analysis (STA) for setup and hold timing closure.
     *   Passed Design Rule Check (DRC) and Layout Versus Schematic (LVS).
 
----
-
-## Testbench & Sequence of Operation
-To run the verification environment, the testbench must perform the following sequence:
-
-1.  **System Initialization:** The Clock Divider is enabled continuously.
-2.  **Configuration:** Perform Register File write operations to addresses `0x2` and `0x3` to configure UART parameters and clock division ratios.
-3.  **Command Execution:** The master sends command frames (e.g., `0xAA`, `0xCC`) via UART_RX.
-4.  **Processing:** The `SYS_CTRL` block coordinates with the Register File and ALU (which uses Clock Gating for power saving).
-5.  **Output Validation:** The system transmits the result back to the master via UART_TX, verifying the end-to-end multi-clock functionality.
+The repository is organized to reflect the different stages of the digital design and ASIC implementation flow:
+**`RTL/`**: Contains the Verilog source codes for the individual system blocks (ALU, Register File, Synchronizers, Clock Dividers, etc.).
+* **`Final_System_RTL/`**: Contains the top-level module integrating the entire system across the multi-clock domains, along with the main testbench.
+* **`Synthesis/`**: Contains the TCL scripts, Synopsys Design Constraints (SDC), and the generated gate-level netlist and reports for the Logic Synthesis phase.
+* **`Post-Syn Formality/`**: Contains the setup and scripts for Logic Equivalence Checking (LEC) between the original RTL and the synthesized netlist using Synopsys Formality.
+* **`DFT/`**: Contains the Design for Testability scripts, scan-chain insertion configurations, and the resulting DFT netlist and coverage reports.
+* **`Post-DFT Formality/`**: Contains Formality checks ensuring functional equivalence between the pre-DFT synthesized netlist and the post-DFT netlist.
+* **`PNR/`**: Contains scripts, floorplanning configurations, and reports for the Place and Route (Physical Design) stage.
