@@ -7,13 +7,15 @@ The project encompasses the complete digital design cycle, starting from RTL des
 
 ---
 
-<br><br>
 
 ## System Architecture
 The system consists of 10 primary blocks distributed across two asynchronous clock domains, utilizing robust synchronization techniques to prevent metastability.
-<img width="1005" height="634" alt="{8A58E897-18E8-4974-8EE9-8F68BC206B9B}" src="https://github.com/user-attachments/assets/5c4b5587-6bde-4a60-a8f3-750be83aa182" />
 
 <br><br>
+
+<img width="1005" height="634" alt="{8A58E897-18E8-4974-8EE9-8F68BC206B9B}" src="https://github.com/user-attachments/assets/5c4b5587-6bde-4a60-a8f3-750be83aa182" />
+
+<br>
 
 ### Clock Domain 1 (Reference Clock: 50 MHz)
 *   **SYS_CTRL:** The main FSM coordinating between the UART, Register File, and ALU.
