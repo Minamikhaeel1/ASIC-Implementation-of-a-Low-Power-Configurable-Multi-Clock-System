@@ -70,7 +70,7 @@ This project was taken through a complete ASIC physical design flow to ensure ma
 *   **Routing:** Completed global and detailed routing with clean design rules.
 *   **Sign-off & Physical Verification:** 
     *   Performed Static Timing Analysis (STA) for setup and hold timing closure.
-    *   Passed Design Rule Check (DRC) and Layout Versus Schematic (LVS).
+    
     
 ## Repository Structure
 The repository is organized to reflect the different stages of the digital design and ASIC implementation flow:
