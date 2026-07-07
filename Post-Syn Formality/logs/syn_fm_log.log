@@ -1,0 +1,341 @@
+
+                                 Formality (R)
+
+               Version L-2016.03-SP1 for linux64 - Apr 13, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+  ** Highlights of Formality (R) Version L-2016.03 **
+   - New alternate verification strategies for resolving inconclusive verifications
+   - Automation for deploying alternate strategies
+   - New command to export the mapping of reference to implementation registers
+   - New capability to combine PG and low power information from db libraries with Verilog functional models
+
+   * Please refer to the Formality Release Notes for details and additional enhancements
+
+Build: 4031317
+Hostname: IC (RHEL64)
+Current time: Wed Oct  1 05:58:54 2025
+
+Loading db file '/opt/Synopsys/Formality2016/libraries/syn/gtech.db'
+###################################################################
+########################### Variables #############################
+###################################################################
+set SSLIB "/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+set TTLIB "/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set FFLIB "/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db"
+/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+###################################################################
+############################ Guidance #############################
+###################################################################
+# Synopsys setup variable
+set synopses_auto_setup true
+true
+# Formality Setup File
+set_svf "/home/IC/Projects/system/syn/SYS_TOP.svf"
+SVF set to '/home/IC/Projects/system/syn/SYS_TOP.svf'.
+1
+###################################################################
+###################### Reference Container ########################
+###################################################################
+# Read Reference Design Verilog Files
+read_verilog -container Ref "/home/IC/Projects/system/rtl/alu.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/alu.v'
+Created container 'Ref'
+Current container set to 'Ref'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/clkdiv.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/clkdiv.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/CLKDIV_MUX.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/CLKDIV_MUX.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/CLK_GATE.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/CLK_GATE.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/data_samp.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/data_samp.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/data_sync.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/data_sync.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/deser.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/deser.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/edge_cnt.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/edge_cnt.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fifo_memory.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/fifo_memory.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fifo_r.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/fifo_r.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fifo_top.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/fifo_top.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fifo_w.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/fifo_w.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fsm.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/fsm.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/fsmr.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/fsmr.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/mux.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/mux.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/par_check.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/par_check.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/parity.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/parity.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/pulse_gen.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/pulse_gen.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/reg_file.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/reg_file.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/rst_sync.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/rst_sync.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/ser.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/ser.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/stop_chack.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/stop_chack.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/strt_check.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/strt_check.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/sync_r2w.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/sync_r2w.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/sync_w2r.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/sync_w2r.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/sys_crl.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/sys_crl.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/SYS_TOP.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/SYS_TOP.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/top.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/top.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/uart_rx_top.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/uart_rx_top.v'
+1
+read_verilog -container Ref "/home/IC/Projects/system/rtl/uart_top.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/rtl/uart_top.v'
+1
+# Read Reference technology libraries
+read_db -container Ref [list $SSLIB $TTLIB $FFLIB]
+Loading db file '/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+1
+# set the top Reference Design 
+set_reference_design SYS_TOP
+Reference design set to 'Ref:/WORK/SYS_TOP'
+1
+set_top SYS_TOP
+Setting top design to 'Ref:/WORK/SYS_TOP'
+Status:   Elaborating design SYS_TOP   ...  
+Status:   Elaborating design UART   ...  
+Status:   Elaborating design top   ...  
+Status:   Elaborating design fsm   ...  
+Status:   Elaborating design ser   ...  
+Status:   Elaborating design parity   ...  
+Status:   Elaborating design mux   ...  
+Status:   Elaborating design uart_rx_top   ...  
+Status:   Elaborating design fsmr   ...  
+Status:   Elaborating design deser   ...  
+Status:   Elaborating design data_samp   ...  
+Status:   Elaborating design edge_cnt   ...  
+Status:   Elaborating design par_check   ...  
+Status:   Elaborating design strt_check   ...  
+Status:   Elaborating design stop_check   ...  
+Status:   Elaborating design clkdiv   ...  
+Status:   Elaborating design CLKDIV_MUX   ...  
+Status:   Elaborating design rst_sync   ...  
+Status:   Elaborating design data_sync   ...  
+Status:   Elaborating design fifo_top   ...  
+Status:   Elaborating design fifo_mem   ...  
+Status:   Elaborating design fifo_w   ...  
+Status:   Elaborating design fifo_r   ...  
+Status:   Elaborating design sync_r2w   ...  
+Status:   Elaborating design sync_w2r   ...  
+Status:   Elaborating design reg_file   ...  
+Status:   Elaborating design pulse_gen   ...  
+Status:   Elaborating design alu   ...  
+Status:   Elaborating design CLK_GATE   ...  
+Status:   Elaborating design sys_crl   ...  
+Status:  Implementing inferred operators...
+
+************ Library Checking Summary ************
+Warning:  3 unlinked power cell(s) with unread pg pins.
+        Use 'report_libraries -defects all' for more details.
+**************************************************
+
+Top design successfully set to 'Ref:/WORK/SYS_TOP'
+Reference design set to 'Ref:/WORK/SYS_TOP'
+1
+###################################################################
+#################### Implementation Container #####################
+###################################################################
+# Read Implementation Design Files
+read_verilog -netlist -container Imp "/home/IC/Projects/system/syn/netlists/SYS_TOP.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/system/syn/netlists/SYS_TOP.v'
+Created container 'Imp'
+Current container set to 'Imp'
+1
+# Read Implementation technology libraries
+read_db -container Imp [list $SSLIB $TTLIB $FFLIB]
+Loading db file '/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/home/IC/Projects/system/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+1
+# set the top Implementation Design
+set_implementation_design SYS_TOP
+Implementation design set to 'Imp:/WORK/SYS_TOP'
+1
+set_top SYS_TOP
+Setting top design to 'Imp:/WORK/SYS_TOP'
+Status:  Implementing inferred operators...
+
+************ Library Checking Summary ************
+Warning:  3 unlinked power cell(s) with unread pg pins.
+        Use 'report_libraries -defects all' for more details.
+**************************************************
+
+Top design successfully set to 'Imp:/WORK/SYS_TOP'
+Implementation design set to 'Imp:/WORK/SYS_TOP'
+1
+###################### Matching Compare points ####################
+match
+Reference design is 'Ref:/WORK/SYS_TOP'
+Implementation design is 'Imp:/WORK/SYS_TOP'
+Status:  Checking designs...
+    Warning: 0 (12) undriven nets found in reference (implementation) design; see formality.log for list (FM-399)
+Status:  Building verification models...
+Status:  Processing Guide Commands...
+
+***************************** Guidance Summary *****************************
+                                         Status
+Command                 Accepted   Rejected  Unsupported  Unprocessed  Total
+----------------------------------------------------------------------------
+environment         :          2          0          0          0          2
+instance_map        :         29          0          0          0         29
+mark                :         22          0          0          0         22
+multiplier          :          2          0          0          0          2
+replace             :          6          0          0          0          6
+transformation
+   map              :         29          0          0          0         29
+   share            :          4          0          0          0          4
+uniquify            :          2          2          0          0          4
+
+Note: If verification succeeds you can safely ignore unaccepted guidance commands.
+
+SVF files read:
+      /home/IC/Projects/system/syn/SYS_TOP.svf
+
+SVF files produced:
+  /home/IC/Projects/system/syn_fm/formality_svf/
+    svf.txt
+****************************************************************************
+
+Status:  Matching...
+    
+*********************************** Matching Results ***********************************    
+ 375 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 4 Matched primary inputs, black-box outputs    
+ 0(0) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 1(0) Unmatched reference(implementation) unread points    
+****************************************************************************************
+
+1
+######################### Run Verification ########################
+set successful [verify]
+Reference design is 'Ref:/WORK/SYS_TOP'
+Implementation design is 'Imp:/WORK/SYS_TOP'
+    
+*********************************** Matching Results ***********************************    
+ 375 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 4 Matched primary inputs, black-box outputs    
+ 0(0) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 1(0) Unmatched reference(implementation) unread points    
+****************************************************************************************
+
+Status:  Verifying...
+
+********************************* Verification Results *********************************
+Verification SUCCEEDED
+----------------------
+ Reference design: Ref:/WORK/SYS_TOP
+ Implementation design: Imp:/WORK/SYS_TOP
+ 375 Passing compare points
+----------------------------------------------------------------------------------------
+Matched Compare Points     BBPin    Loop   BBNet     Cut    Port     DFF     LAT   TOTAL
+----------------------------------------------------------------------------------------
+Passing (equivalent)           0       0       0       0       3     372       0     375
+Failing (not equivalent)       0       0       0       0       0       0       0       0
+Not Compared
+  Unread                       0       0       0       0       0       0       1       1
+****************************************************************************************
+1
+if {!$successful} {
+diagnose
+analyze_points -failing
+}
+########################### Reporting ############################# 
+report_passing_points > "reports/passing_points.rpt"
+report_failing_points > "reports/failing_points.rpt"
+report_aborted_points > "reports/aborted_points.rpt"
+report_unverified_points > "reports/unverified_points.rpt"
+start_gui
