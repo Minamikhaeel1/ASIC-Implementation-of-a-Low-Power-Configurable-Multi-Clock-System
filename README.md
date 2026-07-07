@@ -7,6 +7,8 @@ The project encompasses the complete digital design cycle, starting from RTL des
 
 ---
 
+<br><br>
+
 ## System Architecture
 The system consists of 10 primary blocks distributed across two asynchronous clock domains, utilizing robust synchronization techniques to prevent metastability.
 <img width="1005" height="634" alt="{8A58E897-18E8-4974-8EE9-8F68BC206B9B}" src="https://github.com/user-attachments/assets/5c4b5587-6bde-4a60-a8f3-750be83aa182" />
@@ -33,37 +35,24 @@ The system consists of 10 primary blocks distributed across two asynchronous clo
 
 ## 🛠️ Supported ALU Operations
 The ALU supports a wide range of operations, configured via a 4-bit `ALU_FUN` signal:
+<img width="516" height="711" alt="{385AFE21-1F34-4A4A-8E06-940AAA7951EF}" src="https://github.com/user-attachments/assets/9f4991e4-498f-4aa9-8d42-01b6b518f106" />
 
-| Category | Operations |
-| :--- | :--- |
-| **Arithmetic** | Addition, Subtraction, Multiplication, Division |
-| **Logical** | AND, OR, NAND, NOR, XOR, XNOR |
-| **Comparison** | $A = B$, $A > B$ |
-| **Shift** | $A \gg 1$, $A \ll 1$ |
 
 ---
 
 ## 📝 Memory Map & Configuration Registers
 The Register File (8x16) allocates specific addresses for system configuration and general-purpose operations. Normal Write/Read operations utilize addresses `0x4` to `0x15`.
 
-| Address | Register Name | Description | Default Value |
-| :--- | :--- | :--- | :--- |
-| `0x0` | **REG0** | ALU Operand A | N/A |
-| `0x1` | **REG1** | ALU Operand B | N/A |
-| `0x2` | **REG2** | UART Config (Bit 0: Parity EN, Bit 1: Parity Type, Bits 7:2: Prescale) | Parity EN = 1, Type = 0, Prescale = 32 |
-| `0x3` | **REG3** | Division Ratio (Bits 7:0) | Div Ratio = 32 |
+
+<img width="615" height="677" alt="{927DB77D-FC87-4615-8380-904BFA02251B}" src="https://github.com/user-attachments/assets/0bca8954-3193-43c3-8bf2-2c53646a119c" />
 
 ---
 
 ## Supported Commands & Frame Sequence
 The master controls the system by sending multi-frame commands via UART.
 
-| Command Type | HEX Code | Frame 0 | Frame 1 | Frame 2 | Frame 3 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Register File Write** | `0xAA` | CMD (`0xAA`) | Address | Write Data | - |
-| **Register File Read** | `0xBB` | CMD (`0xBB`) | Address | - | - |
-| **ALU Op (With Operands)** | `0xCC` | CMD (`0xCC`) | Operand A | Operand B | ALU_FUN |
-| **ALU Op (No Operands)** | `0xDD` | CMD (`0xDD`) | ALU_FUN | - | - |
+<img width="599" height="203" alt="{04CF8D19-97FB-4A24-AC62-A85C013632D3}" src="https://github.com/user-attachments/assets/eb64d469-59a0-41da-a6e2-a062edb84c09" />
+<img width="827" height="571" alt="{39659E84-CA7E-438B-A65D-E6268FE1EBF9}" src="https://github.com/user-attachments/assets/f77a2130-213f-4908-bfee-d34ac63e7b34" />
 
 ---
 
