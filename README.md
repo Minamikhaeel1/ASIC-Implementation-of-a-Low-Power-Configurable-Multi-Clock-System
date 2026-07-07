@@ -13,7 +13,7 @@ The system consists of 10 primary blocks distributed across two asynchronous clo
 
 <br><br>
 
-<img width="1005" height="634" alt="{8A58E897-18E8-4974-8EE9-8F68BC206B9B}" src="https://github.com/user-attachments/assets/5c4b5587-6bde-4a60-a8f3-750be83aa182" />
+<img width="1010" height="610" alt="{35A25FD1-3CBB-4422-8278-8CC46E840157}" src="https://github.com/user-attachments/assets/9a383fb4-31d7-448d-bcae-6f0b9d05a4e6" />
 
 <br>
 
@@ -35,14 +35,14 @@ The system consists of 10 primary blocks distributed across two asynchronous clo
 
 ---
 
-## 🛠️ Supported ALU Operations
+## Supported ALU Operations
 The ALU supports a wide range of operations, configured via a 4-bit `ALU_FUN` signal:
 <img width="516" height="711" alt="{385AFE21-1F34-4A4A-8E06-940AAA7951EF}" src="https://github.com/user-attachments/assets/9f4991e4-498f-4aa9-8d42-01b6b518f106" />
 
 
 ---
 
-## 📝 Memory Map & Configuration Registers
+## Memory Map & Configuration Registers
 The Register File (8x16) allocates specific addresses for system configuration and general-purpose operations. Normal Write/Read operations utilize addresses `0x4` to `0x15`.
 
 
@@ -71,7 +71,8 @@ This project was taken through a complete ASIC physical design flow to ensure ma
 *   **Sign-off & Physical Verification:** 
     *   Performed Static Timing Analysis (STA) for setup and hold timing closure.
     *   Passed Design Rule Check (DRC) and Layout Versus Schematic (LVS).
-
+    
+## Repository Structure
 The repository is organized to reflect the different stages of the digital design and ASIC implementation flow:
 **`RTL/`**: Contains the Verilog source codes for the individual system blocks (ALU, Register File, Synchronizers, Clock Dividers, etc.).
 * **`Final_System_RTL/`**: Contains the top-level module integrating the entire system across the multi-clock domains, along with the main testbench.
