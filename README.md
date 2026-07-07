@@ -1,14 +1,17 @@
 # Multi-Clock Domain System Controller & ALU via UART (RTL-to-GDSII)
 
-## 📌 Project Overview
+## Project Overview
 This project implements a multi-clock domain digital system capable of executing ALU and Register File operations based on commands received from a master via a UART interface. Upon completion of the required operations, the system transmits the results back to the master. 
 
 The project encompasses the complete digital design cycle, starting from RTL design and verification, down to the full **ASIC Implementation Flow (RTL-to-GDSII)**.
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 The system consists of 10 primary blocks distributed across two asynchronous clock domains, utilizing robust synchronization techniques to prevent metastability.
+<img width="1005" height="634" alt="{8A58E897-18E8-4974-8EE9-8F68BC206B9B}" src="https://github.com/user-attachments/assets/5c4b5587-6bde-4a60-a8f3-750be83aa182" />
+
+<br><br>
 
 ### Clock Domain 1 (Reference Clock: 50 MHz)
 *   **SYS_CTRL:** The main FSM coordinating between the UART, Register File, and ALU.
@@ -52,7 +55,7 @@ The Register File (8x16) allocates specific addresses for system configuration a
 
 ---
 
-## ⚙️ Supported Commands & Frame Sequence
+## Supported Commands & Frame Sequence
 The master controls the system by sending multi-frame commands via UART.
 
 | Command Type | HEX Code | Frame 0 | Frame 1 | Frame 2 | Frame 3 |
@@ -64,7 +67,7 @@ The master controls the system by sending multi-frame commands via UART.
 
 ---
 
-## 🚀 ASIC Implementation Flow (RTL-to-GDSII)
+## ASIC Implementation Flow (RTL-to-GDSII)
 This project was taken through a complete ASIC physical design flow to ensure manufacturability and timing closure.
 
 *   **RTL Simulation & Verification:** Functionality verified using self-checking testbenches covering all command sequences and asynchronous FIFO corner cases.
@@ -80,7 +83,7 @@ This project was taken through a complete ASIC physical design flow to ensure ma
 
 ---
 
-## 🧪 Testbench & Sequence of Operation
+## Testbench & Sequence of Operation
 To run the verification environment, the testbench must perform the following sequence:
 
 1.  **System Initialization:** The Clock Divider is enabled continuously.
